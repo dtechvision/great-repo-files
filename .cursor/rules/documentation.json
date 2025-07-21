@@ -1,0 +1,17 @@
+{
+  "name": "Documentation Rules",
+  "description": "Guidelines for documentation files",
+  "glob": "**/*.md",
+  "rules": [
+    "Use clear, concise language in all documentation",
+    "Include code examples for complex concepts",
+    "Keep README files up-to-date with current functionality",
+    "Use proper markdown formatting and structure",
+    "Include table of contents for long documents",
+    "Document API endpoints with request/response examples",
+    "Include setup and installation instructions",
+    "Document known issues and troubleshooting steps",
+    "Use consistent heading hierarchy (H1, H2, H3)",
+    "Include links to related documentation"
+  ]
+}

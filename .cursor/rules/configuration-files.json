@@ -1,0 +1,17 @@
+{
+  "name": "Configuration Files Rules",
+  "description": "Guidelines for configuration and environment files",
+  "glob": "**/{*.config.*,*.env*,.env*}",
+  "rules": [
+    "Never commit sensitive information like API keys or passwords",
+    "Use environment variables for different deployment environments",
+    "Provide example configuration files (.env.example)",
+    "Use typed configuration objects with validation",
+    "Document all configuration options clearly",
+    "Use consistent naming conventions for environment variables",
+    "Implement configuration validation at application startup",
+    "Use separate configurations for development, staging, and production",
+    "Store secrets in secure secret management systems",
+    "Use configuration hierarchies for overriding defaults"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Data Access Layer Rules",
+  "description": "Guidelines for data access layer",
+  "glob": "src/data/**/*.ts",
+  "rules": [
+    "Use repository pattern for data access",
+    "Implement data mappers to convert between DTOs and domain models",
+    "Use TypeORM for database operations",
+    "Implement unit of work pattern for transaction management",
+    "Use eager loading to prevent N+1 query problems",
+    "Implement proper indexing strategies for queries",
+    "Use connection pooling for database connections",
+    "Implement proper error handling for database operations",
+    "Use migrations for database schema changes",
+    "Implement proper data validation at the persistence layer"
+  ]
+}

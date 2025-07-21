@@ -1,0 +1,15 @@
+{
+  "name": "Test File Rules",
+  "description": "Guidelines for test implementation with Effect and vitest",
+  "glob": "**/test/**/*.ts",
+  "rules": [
+    "Use '@effect/vitest' for Effect-based tests with it.effect() pattern",
+    "Use regular 'vitest' for pure TypeScript functions without Effects",
+    "Import { assert, describe, it } from '@effect/vitest' for Effect tests",
+    "Use assert methods (assert.strictEqual, assert.deepStrictEqual) not expect",
+    "Always use TestClock for time-dependent tests to avoid flaky tests",
+    "Use TestClock.advance() to simulate time passage in tests",
+    "Structure tests with it.effect('description', () => Effect.gen(function*() { ... }))",
+    "Never use Effect.runSync with regular it() - use it.effect() instead"
+  ]
+}

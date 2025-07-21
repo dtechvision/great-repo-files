@@ -1,0 +1,16 @@
+{
+  "name": "Development Workflow Rules",
+  "description": "Mandatory development workflow for function creation",
+  "glob": "src/**/*.ts",
+  "rules": [
+    "🚨 MANDATORY FUNCTION WORKFLOW: 1) Create function 2) Lint TS file 3) Check compilation 4) Lint again 5) Compile again 6) Write test 7) Build & lint test",
+    "NEVER skip any step in the function development workflow",
+    "NEVER continue to next step until current step passes completely",
+    "NEVER create multiple functions without completing full workflow for each",
+    "Research → Plan → Implement approach for all development",
+    "Use TodoWrite tool for complex multi-step tasks",
+    "Run 'bun run test <file>' after making changes",
+    "Run 'bun run check' for type checking",
+    "Run 'bun run build' to verify compilation"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Service Layer Rules",
+  "description": "Guidelines for service layer implementation",
+  "glob": "src/services/**/*.ts",
+  "rules": [
+    "Implement services as classes with dependency injection",
+    "Use interfaces to define service contracts",
+    "Handle errors using custom error classes",
+    "Implement logging for all API calls and important operations",
+    "Use async/await for asynchronous operations",
+    "Implement retry logic for network operations",
+    "Use proper timeout configurations for external calls",
+    "Implement circuit breaker pattern for resilience",
+    "Cache frequently accessed data appropriately",
+    "Use proper authentication and authorization patterns"
+  ]
+}

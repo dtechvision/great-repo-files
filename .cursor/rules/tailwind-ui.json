@@ -1,0 +1,16 @@
+{
+  "name": "Tailwind UI Rules",
+  "description": "Guidelines for Tailwind CSS components",
+  "glob": "src/components/ui/**/*.tsx",
+  "rules": [
+    "Use Tailwind CSS classes for styling",
+    "Implement responsive design using Tailwind's responsive modifiers",
+    "Create reusable components for common UI elements",
+    "Use @apply directive in CSS files for complex, repeating class combinations",
+    "Follow atomic design principles: atoms, molecules, organisms",
+    "Use Tailwind's design tokens for consistent spacing and colors",
+    "Implement dark mode support using class-based strategy",
+    "Use Tailwind plugins for extended functionality",
+    "Optimize bundle size by purging unused CSS classes"
+  ]
+}

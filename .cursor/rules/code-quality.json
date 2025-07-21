@@ -1,0 +1,17 @@
+{
+  "name": "Code Quality Standards",
+  "description": "Quality standards and best practices",
+  "glob": "**/*.ts",
+  "rules": [
+    "NEVER use 'any' type or type assertions",
+    "Use concrete types over generic 'unknown' where possible",
+    "Add explicit type annotations when inference fails",
+    "Prefer early returns for better readability",
+    "Validate all inputs at boundaries",
+    "Use proper Effect error management patterns",
+    "Choose clarity over cleverness in all implementations",
+    "Delete old code when replacing functionality",
+    "No comments unless explicitly requested",
+    "Follow existing TypeScript patterns in the codebase"
+  ]
+}

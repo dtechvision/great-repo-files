@@ -1,0 +1,17 @@
+{
+  "name": "Utility Functions Rules",
+  "description": "Guidelines for utility and helper functions",
+  "glob": "src/utils/**/*.ts",
+  "rules": [
+    "Create pure functions whenever possible",
+    "Use descriptive function names that explain the purpose",
+    "Implement proper error handling for edge cases",
+    "Write comprehensive JSDoc documentation",
+    "Use TypeScript generics for reusable type-safe functions",
+    "Implement proper input validation",
+    "Use immutable data patterns",
+    "Create unit tests for all utility functions",
+    "Avoid side effects in utility functions",
+    "Use functional programming patterns where appropriate"
+  ]
+}

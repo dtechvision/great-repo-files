@@ -1,0 +1,16 @@
+{
+  "name": "Effect TypeScript Rules",
+  "description": "Core rules for Effect-based TypeScript development",
+  "glob": "**/*.ts",
+  "rules": [
+    "🚨 NEVER use try-catch blocks inside Effect.gen generators - use Effect error handling instead",
+    "🚨 NEVER use type assertions (as any, as never, as unknown) - fix underlying type issues",
+    "🚨 ALWAYS use 'return yield*' pattern when yielding Effect.fail or Effect.interrupt in Effect.gen",
+    "Use Effect.gen for monadic composition of effects",
+    "Use Data.TaggedError for custom error types",
+    "Prefer Effect.tryPromise for Promise-based operations",
+    "Use proper Effect constructors like Array.make(), Chunk.fromIterable()",
+    "Follow functional programming principles throughout",
+    "IMMEDIATELY run 'bun run lint --fix <file.ts>' after editing ANY TypeScript file"
+  ]
+}

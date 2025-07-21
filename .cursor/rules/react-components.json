@@ -1,0 +1,16 @@
+{
+  "name": "React Component Rules",
+  "description": "Guidelines for React components",
+  "glob": "**/*.tsx",
+  "rules": [
+    "Use functional components with hooks",
+    "Implement prop types using TypeScript interfaces",
+    "Follow the naming convention: ComponentName.tsx",
+    "Use React.memo() for performance optimization when appropriate",
+    "Implement error boundaries for top-level components",
+    "Use useCallback for event handlers to prevent unnecessary re-renders",
+    "Implement custom hooks for complex state logic",
+    "Use React.lazy() for code splitting large components",
+    "Follow the single responsibility principle for each component"
+  ]
+}

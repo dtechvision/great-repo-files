@@ -1,0 +1,17 @@
+{
+  "name": "API Routes Rules",
+  "description": "Guidelines for API route implementation",
+  "glob": "src/api/**/*.ts",
+  "rules": [
+    "Use RESTful conventions for route naming",
+    "Implement proper HTTP status codes for responses",
+    "Use middleware for authentication and authorization",
+    "Implement request validation using schema libraries",
+    "Use proper error handling and error response formats",
+    "Implement rate limiting for API endpoints",
+    "Use OpenAPI/Swagger for API documentation",
+    "Implement proper CORS configuration",
+    "Use compression middleware for large responses",
+    "Implement API versioning strategy"
+  ]
+}

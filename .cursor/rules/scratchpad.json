@@ -1,0 +1,14 @@
+{
+  "name": "Scratchpad Development Rules",
+  "description": "Guidelines for rapid prototyping in scratchpad directory",
+  "glob": "scratchpad/**/*.ts",
+  "rules": [
+    "Use scratchpad for rapid prototyping and testing complex examples",
+    "Check TypeScript compilation with 'bun --noEmit ./scratchpad/file.ts'",
+    "Fix formatting using 'bun run lint --fix ./scratchpad/file.ts'",
+    "Clean up temporary files when done (test-*.ts, temp*.ts, example*.ts)",
+    "This is a safe space for experimentation without affecting main codebase",
+    "Test execution with 'bun ./scratchpad/file.ts' if needed",
+    "Validate type checking before copying examples to JSDoc"
+  ]
+}

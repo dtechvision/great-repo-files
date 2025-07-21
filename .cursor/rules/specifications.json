@@ -1,0 +1,13 @@
+{
+  "name": "Implementation Specifications Rules",
+  "description": "Guidelines for working with .specs directory",
+  "glob": ".specs/**/*",
+  "rules": [
+    "Reference .specs/ directory for detailed implementation plans",
+    "Each specification is organized by feature name",
+    "Use specifications to understand existing implementation plans",
+    "Follow architectural patterns outlined in specifications",
+    "Update specifications when implementing new features",
+    "Maintain consistency with planned approaches in specs"
+  ]
+}

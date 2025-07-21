@@ -1,0 +1,16 @@
+{
+  "name": "SolidJS Component Rules",
+  "description": "Guidelines for SolidJS components",
+  "glob": "src/components/**/*.tsx",
+  "rules": [
+    "Use the createSignal hook for local state management",
+    "Implement props using TypeScript interfaces",
+    "Use createEffect for side effects",
+    "Follow the naming convention: ComponentName.tsx",
+    "Use createMemo for expensive computations",
+    "Use createResource for async data fetching",
+    "Implement reactive updates with Signal patterns",
+    "Use Show and For components for conditional rendering and lists",
+    "Avoid destructuring props to maintain reactivity"
+  ]
+}

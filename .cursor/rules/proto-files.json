@@ -1,0 +1,16 @@
+{
+  "name": "Proto File Rules",
+  "description": "Handling for auto-generated Protocol Buffer files",
+  "glob": "**/*.proto",
+  "rules": [
+    "Do not modify these files directly",
+    "Use protoc to generate corresponding TypeScript interfaces",
+    "Update the proto files in the source repository, not here",
+    "Ensure all message fields have appropriate tags",
+    "Use semantic versioning for breaking changes",
+    "Document all message fields with clear descriptions",
+    "Follow proto3 syntax guidelines",
+    "Use appropriate field types (int32, int64, string, bool, etc.)",
+    "Implement proper service definitions for gRPC"
+  ]
+}
