@@ -25,7 +25,7 @@ used and deployed throughout our work at [our development boutique](https://dtec
 ## Dev Dependencies
 
 ```
-bun add -D @effect/eslint-plugin @effect/language-service @effect/vitest @eslint/compat @eslint/eslintrc @eslint/js eslint eslint-import-resolver-typescript eslint-plugin-import-x eslint-plugin-local-rules eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys prettier vitest
+bun add -D dprint @effect/eslint-plugin @effect/language-service @effect/vitest @eslint/compat @eslint/eslintrc @eslint/js eslint eslint-import-resolver-typescript eslint-plugin-codegen eslint-plugin-import-x eslint-plugin-local-rules eslint-plugin-simple-import-sort eslint-plugin-sort-destructure-keys prettier vitest @typescript-eslint/parser @typescript-eslint/eslint-plugin
 ```
 
 ## Claude.md

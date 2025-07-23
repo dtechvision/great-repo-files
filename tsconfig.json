@@ -1,43 +1,35 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    // Use incremental builds with project references.
-    "incremental": true,
-    "composite": true,
+    // Enable latest features
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "allowJs": true,
 
-    // Target modern JavaScript (ES2022+) whilst staying closely compatible with the Node.js module system.
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleDetection": "force", // Treat every non-declaration file as a module.
-    "esModuleInterop": false, // Do not fiddle with import/export statements
-    "verbatimModuleSyntax": true, // Only transform/eliminate type-only import/export statements.
-    "allowJs": false, // If you touch this, a puppy dies.
-    "rewriteRelativeImportExtensions": true, // Rewrite `.ts` imports to `.js` at build time.
-    "erasableSyntaxOnly": true, // Allows to run directly with node and type removal
+    // Bundler mode
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
 
-    // Emit source- & declaration maps.
-    "declarationMap": true,
-    "sourceMap": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
 
-    // Opt-in to stricter type checking and correctness guard rails. The more the merrier.
+    // Best practices
     "strict": true,
-    "exactOptionalPropertyTypes": true,
-    "noUnusedLocals": true,
-    "noImplicitOverride": true,
+    "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
 
-    // Miscellaneoaus
-    "skipLibCheck": true, // Skip type checking of third party libraries.
-    "noErrorTruncation": false, // Do not truncate error messages.
-    "types": [], // Disable automatic loading of `@types/*` packages.
-    "plugins": [
-      {
-        "name": "@effect/language-service",
-        "namespaceImportPackages": [
-          "effect",
-          "@effect/*"
-        ]
-      }
-    ]
-  }
+    "noImplicitAny": false,
+
+    // Some stricter flags (disabled by default)
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
 }

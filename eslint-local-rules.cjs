@@ -3,14 +3,16 @@ module.exports = {
     meta: {
       type: "problem",
       docs: {
-        description: "disallow instance fields in classes extending Schema.Opaque(...)",
+        description:
+          "disallow instance fields in classes extending Schema.Opaque(...)",
         category: "Best Practices",
-        recommended: false
+        recommended: false,
       },
       schema: [], // no options
       messages: {
-        noFields: "Classes extending Schema.Opaque(...) must not declare instance fields."
-      }
+        noFields:
+          "Classes extending Schema.Opaque(...) must not declare instance fields.",
+      },
     },
     create(context) {
       // ----------------------------------------------------------------------
@@ -25,12 +27,12 @@ module.exports = {
         if (!inner || inner.type !== "CallExpression") return false
         const fn = inner.callee
         return (
-          fn &&
-          fn.type === "MemberExpression" &&
-          fn.object.type === "Identifier" &&
-          fn.object.name === "Schema" &&
-          fn.property.type === "Identifier" &&
-          fn.property.name === "Opaque"
+          fn
+          && fn.type === "MemberExpression"
+          && fn.object.type === "Identifier"
+          && fn.object.name === "Schema"
+          && fn.property.type === "Identifier"
+          && fn.property.name === "Opaque"
         )
       }
 
@@ -43,12 +45,12 @@ module.exports = {
         for (const element of node.body.body) {
           // only report non-static property definitions
           if (
-            element.type === "PropertyDefinition" &&
-            element.static === false
+            element.type === "PropertyDefinition"
+            && element.static === false
           ) {
             context.report({
               node: element,
-              messageId: "noFields"
+              messageId: "noFields",
             })
           }
         }
@@ -56,8 +58,8 @@ module.exports = {
 
       return {
         ClassDeclaration: checkClass,
-        ClassExpression: checkClass
+        ClassExpression: checkClass,
       }
-    }
-  }
+    },
+  },
 }
