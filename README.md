@@ -19,8 +19,16 @@ used and deployed throughout our work at [our development boutique](https://dtec
 
 # How to use
 
+>**NOTE**: For the CLAUDE.md agent/llm instructions we recommend you start claude, then run the */init* command and append the CLAUDE.md from this repo to the one claude created for your codebase with the following append command
+```bash
+cat /path/to/dTech/CLAUDE.md >> CLAUDE.md
+```
+This way you get the setup instructions and file structure and project description from Claude as a good start while adding the greatness of these repo files. Best of both worlds and you can adjust CLAUDE's setup to adjust to your preference as well. Then
+
 1) Copy over the project files you can see here for eslint, tsconfig, CLAUDE.md and others you see.
 1) Install dev dependencies
+
+Enjoy :) 
 
 ## Dev Dependencies
 

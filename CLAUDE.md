@@ -111,7 +111,7 @@ This project uses the effect library, focusing on functional programming pattern
 
 3. **Implementation Phase**
    - Execute with frequent validation
-   - **🚨 CRITICAL**: IMMEDIATELY run `bun run lint --fix <typescript_file.ts>` after editing ANY TypeScript file
+   - **🚨 CRITICAL**: IMMEDIATELY run `bun run lint:file <typescript_file.ts>` after editing ANY TypeScript file
    - Run automated checks at each step
    - Use parallel approaches when possible
    - Stop and reassess if stuck
@@ -120,12 +120,12 @@ This project uses the effect library, focusing on functional programming pattern
 **ALWAYS follow this EXACT sequence when creating ANY new function:**
 
 1. **Create function** - Write the function implementation in TypeScript file
-2. **Lint TypeScript file** - Run `bun run lint --fix <typescript_file.ts>`
+2. **Lint TypeScript file** - Run `bun run lint:file <typescript_file.ts>`
 3. **Check compilation** - Run `bun` to ensure it compiles
-4. **Lint TypeScript file again** - Run `bun run lint --fix <typescript_file.ts>` again
+4. **Lint TypeScript file again** - Run `bun run lint:file <typescript_file.ts>` again
 5. **Ensure compilation** - Run `bun` again to double-check
 6. **Write test** - Create comprehensive test for the function in test file
-7. **Compile test & lint test file** - Run `bun run build` then `bun run lint --fix <test_file.ts>`
+7. **Compile test & lint test file** - Run `bun run build` then `bun run lint:file <test_file.ts>`
 
 **CRITICAL NOTES:**
 - **ONLY LINT TYPESCRIPT FILES** (.ts and .tsx files) - Do NOT lint markdown, JSON, or other file types
@@ -140,17 +140,17 @@ This ensures:
 - No accumulation of technical debt
 
 ### Mandatory Validation Steps
-- **🚨 CRITICAL FIRST STEP**: IMMEDIATELY run `bun run lint --fix <typescript_file.ts>` after editing ANY TypeScript file
+- **🚨 CRITICAL FIRST STEP**: IMMEDIATELY run `bun run lint:file <typescript_file.ts>` after editing ANY TypeScript file
 - Always run tests after making changes: `bun run test <test_file.ts>`
 - Run type checking: `bun run check`
 - Build the project: `bun run build`
-- **MANDATORY AFTER EVERY EDIT**: Always lint TypeScript files that are changed with `bun run lint --fix <typescript_file.ts>`
+- **MANDATORY AFTER EVERY EDIT**: Always lint TypeScript files that are changed with `bun run lint:file <typescript_file.ts>`
 - Always check for type errors before committing: `bun run check`
 
 ### 🚨 TYPESCRIPT LINTING REMINDER 🚨
 **NEVER FORGET**: After editing ANY TypeScript file (.ts), IMMEDIATELY run:
 ```bash
-bun run lint --fix <typescript_file.ts>
+bun run lint:file <typescript_file.ts>
 ```
 - This is NOT optional - it must be done after EVERY TypeScript file modification!
 - **ONLY lint .ts files** - Do NOT attempt to lint markdown, JSON, or other file types
@@ -173,7 +173,7 @@ touch ./scratchpad/test-example.ts
 bun --noEmit ./scratchpad/test-example.ts
 
 # Fix formatting using project rules
-bun run lint --fix ./scratchpad/test-example.ts
+bun run lint:file ./scratchpad/test-example.ts
 
 # Test execution if needed
 bun ./scratchpad/test-example.ts
