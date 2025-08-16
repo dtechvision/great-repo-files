@@ -74,6 +74,7 @@ export default [
     rules: {
       "max-lines": ["error", {"max": 500, "skipComments": true}],
       "complexity": ["error", {"max": 20, "variant": "modified"}],
+      "require-atomic-updates": "error",
       "max-depth": ["error", 4],
       "max-lines-per-function": ["error", {"max": 150, "skipBlankLines": true, "skipComments": true}],
 
