@@ -77,6 +77,8 @@ export default [
       "require-atomic-updates": "error",
       "max-depth": ["error", 4],
       "max-lines-per-function": ["error", {"max": 150, "skipBlankLines": true, "skipComments": true}],
+      "eqeqeq": "error",
+      "eslint prefer-template": "error",
 
       "codegen/codegen": "error",
       "no-fallthrough": "off",
