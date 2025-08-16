@@ -73,6 +73,7 @@ export default [
 
     rules: {
       "max-lines": ["error", {"max": 500, "skipComments": true}],
+      "complexity": ["error", {"variant": "modified"}],
       "codegen/codegen": "error",
       "no-fallthrough": "off",
       "no-irregular-whitespace": "off",
