@@ -83,6 +83,7 @@ export default [
       "sort-vars": "error",
       "curly": "error",
       "default-case-last": "error",
+      "dot-notation": "error",
 
       "codegen/codegen": "error",
       "no-fallthrough": "off",
