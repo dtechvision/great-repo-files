@@ -82,6 +82,7 @@ export default [
       "prefer-template": "error",
       "sort-vars": "error",
       "curly": "error",
+      "default-case-last": "error",
 
       "codegen/codegen": "error",
       "no-fallthrough": "off",
