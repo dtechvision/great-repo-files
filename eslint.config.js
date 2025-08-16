@@ -81,6 +81,7 @@ export default [
       "codegen/codegen": "error",
       "no-fallthrough": "off",
       "no-irregular-whitespace": "off",
+      "no-useless-concat": "error",
       "object-shorthand": "error",
       "prefer-destructuring": "off",
       "sort-imports": "off",
