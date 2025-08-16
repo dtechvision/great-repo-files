@@ -81,6 +81,7 @@ export default [
       "eqeqeq": "error",
       "prefer-template": "error",
       "sort-vars": "error",
+      "curly": "error",
 
       "codegen/codegen": "error",
       "no-fallthrough": "off",
