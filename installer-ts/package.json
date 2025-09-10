@@ -1,0 +1,66 @@
+{
+  "name": "dtechify",
+  "version": "1.0.0",
+  "type": "module",
+  "packageManager": "bun@1.1.34",
+  "license": "MIT",
+  "description": "Instantly add essential TypeScript project configuration files and AI helpers to any project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtechvision/great-repo-files"
+  },
+  "homepage": "https://github.com/dtechvision/great-repo-files",
+  "keywords": ["typescript", "eslint", "effect", "cli", "configuration", "ai-helpers", "cursor", "claude"],
+  "bin": {
+    "dtechify": "./bin.cjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "scripts": {
+    "build": "tsup && bun run copy-package-json",
+    "build:ts": "tsup",
+    "clean": "rimraf dist/*",
+    "check": "tsc -b tsconfig.json",
+    "lint": "eslint \"**/{src,test,examples,scripts,dtslint}/**/*.{ts,mjs}\"",
+    "lint-fix": "bun run lint --fix",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "copy-package-json": "bun scripts/copy-package-json.ts",
+    "changeset-version": "changeset version && node scripts/version.mjs",
+    "changeset-publish": "bun run build && TEST_DIST= bun run test && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.8",
+    "@effect/cli": "^0.69.0",
+    "@effect/eslint-plugin": "^0.3.2",
+    "@effect/language-service": "latest",
+    "@effect/platform": "^0.90.3",
+    "@effect/platform-node": "^0.96.0",
+    "@effect/vitest": "^0.25.1",
+    "@eslint/compat": "1.1.1",
+    "@eslint/eslintrc": "3.1.0",
+    "@eslint/js": "9.10.0",
+    "@types/node": "^22.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "effect": "^3.17.7",
+    "eslint": "^9.10.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-codegen": "0.28.0",
+    "eslint-plugin-deprecation": "^3.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-sort-destructure-keys": "^2.0.0",
+    "tsup": "^8.2.4",
+    "typescript": "^5.6.2",
+    "vitest": "^3.2.0"
+  },
+  "bun": {
+    "patchedDependencies": {
+      "@changesets/get-github-info@0.6.0": "patches/@changesets__get-github-info@0.6.0.patch"
+    }
+  }
+}
