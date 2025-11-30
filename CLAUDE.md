@@ -83,6 +83,18 @@
 ## Project Overview
 This project uses the effect library, focusing on functional programming patterns and effect systems in TypeScript.
 
+## Effect Solutions Usage
+
+The Effect Solutions CLI provides curated best practices and patterns for Effect TypeScript. Before working on Effect code in this repo, check the relevant topic that covers your use case.
+
+- `effect-solutions list` - list all available topics
+- `effect-solutions show <slug...>` - read one or more topics (e.g., `project-setup` or `tsconfig`)
+- `effect-solutions search <term>` - search topics by keyword
+
+The repository also ships `effect-solutions.md` as an actionable guide covering the language service setup, TypeScript configuration, and reference repository steps so you can follow the recommended workflow verbatim.
+
+**Local Effect Source:** Consider cloning the Effect repository to `~/.local/share/effect-solutions/effect`. Use that clone to explore APIs, inspect implementation details, and answer questions that documentation alone does not resolve.
+
 ## Development Workflow
 
 ### Core Principles
