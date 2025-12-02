@@ -45,6 +45,16 @@ bun run changeset-version
 bun run changeset-publish
 ```
 
+## Effect Solutions Usage
+
+The `effect-solutions.md` file shipped by `dtechify install` (binary name) from the `@dtechvision/make-repo-great` package documents the Effect Language Service setup, TypeScript configuration, and how to keep a local reference clone of the Effect source. The guide is installed by default unless the user passes `--skip-effect-solutions`.
+
+- `effect-solutions list` - view curated topics
+- `effect-solutions show <slug...>` - follow the `project-setup`, `tsconfig`, or other instructions
+- `effect-solutions search <term>` - find guidance by keyword
+
+**Local Effect Source:** Clone `https://github.com/Effect-TS/effect` into `~/.local/share/effect-solutions/effect` so the CLI instructions and AI helpers have a real repository to reference.
+
 ## Architecture Overview
 
 ### Core Structure

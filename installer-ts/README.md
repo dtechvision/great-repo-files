@@ -4,16 +4,16 @@ Instantly add essential TypeScript project configuration files and AI helpers to
 
 ## 🚀 Quick Start
 
-Install configuration files in your project:
+Install configuration files in your project (binary name is `dtechify`; package is `@dtechvision/make-repo-great`):
 
 ```bash
-npx dtechify install
+npx @dtechvision/make-repo-great dtechify install
 ```
 
 Or with Bun:
 
 ```bash
-bunx dtechify install
+bunx @dtechvision/make-repo-great dtechify install
 ```
 
 ## 📦 What Gets Installed
@@ -29,6 +29,7 @@ bunx dtechify install
 
 ### AI Helper Files
 - `CLAUDE.md` - Claude AI assistant instructions
+- `effect-solutions.md` - Effect Solutions CLI setup guide with language service, TypeScript configuration, and reference instructions
 
 ### Cursor IDE Rules
 - `.cursor/rules/` - Complete set of Cursor IDE rules for:
@@ -68,29 +69,52 @@ The following npm packages will be automatically installed as devDependencies:
 
 ```bash
 # Install all configuration files
-npx dtechify install
+npx @dtechvision/make-repo-great dtechify install
 
 # Install specific category of files
-npx dtechify install config
-npx dtechify install ai
-npx dtechify install cursor
-npx dtechify install linting
+npx @dtechvision/make-repo-great dtechify install config
+npx @dtechvision/make-repo-great dtechify install ai
+npx @dtechvision/make-repo-great dtechify install cursor
+npx @dtechvision/make-repo-great dtechify install linting
 ```
 
 ### Options
 
 ```bash
 # Preview what would be installed (dry run)
-npx dtechify install --dry-run
+npx @dtechvision/make-repo-great dtechify install --dry-run
 
 # Force overwrite existing files without prompting
-npx dtechify install --force
+npx @dtechvision/make-repo-great dtechify install --force
 
 # Skip automatic dependency installation
-npx dtechify install --skip-deps
+npx @dtechvision/make-repo-great dtechify install --skip-deps
 
 # Show all available files
-npx dtechify list
+npx @dtechvision/make-repo-great dtechify list
+```
+
+### Additional Options
+
+- `--skip-effect-solutions` - Install everything except the `effect-solutions.md` guide when running `dtechify install`.
+
+## 🚢 Release
+1) Update version in `installer-ts/package.json` (semantic versioning).
+2) Ensure `NPM_TOKEN` is set in your environment (and in GitHub Actions secrets for automation).
+3) From `installer-ts/`, install, lint, test, and build:
+```bash
+bun install
+bun run lint
+bun run test
+bun run build
+```
+4) Publish to npm with Bun:
+```bash
+bun publish --access public --tag latest
+```
+5) Verify the package is live and the binary works:
+```bash
+bunx @dtechvision/make-repo-great dtechify --version
 ```
 
 ### Interactive Mode
@@ -141,4 +165,3 @@ bun run lint-fix
 ## 📝 License
 
 MIT
-

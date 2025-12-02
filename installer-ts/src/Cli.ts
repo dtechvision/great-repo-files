@@ -8,6 +8,8 @@ import { checkAndInstallDependencies } from "./DependencyInstaller.js"
 import { FILE_MAPPINGS } from "./FileConfig.js"
 import { installFiles } from "./FileInstaller.js"
 
+const EFFECT_SOLUTIONS_FILE = "effect-solutions.md"
+
 const forceOption = Options.boolean("force").pipe(
   Options.withAlias("f"),
   Options.withDescription("Overwrite existing files without prompting")
@@ -21,6 +23,10 @@ const skipDepsOption = Options.boolean("skip-deps").pipe(
   Options.withDescription("Skip automatic dependency installation")
 )
 
+const skipEffectSolutionsOption = Options.boolean("skip-effect-solutions").pipe(
+  Options.withDescription("Skip installing the Effect Solutions guide")
+)
+
 const categoryArgs = Args.text().pipe(
   Args.withDescription("Category of files to install (all|config|ai|cursor|linting)"),
   Args.withDefault("all")
@@ -30,10 +36,11 @@ const installCommand = Command.make("install", {
   force: forceOption,
   dryRun: dryRunOption,
   skipDeps: skipDepsOption,
+  skipEffectSolutions: skipEffectSolutionsOption,
   category: categoryArgs
 }).pipe(
   Command.withDescription("Install common TypeScript configuration files"),
-  Command.withHandler(({ category, dryRun, force, skipDeps }) =>
+  Command.withHandler(({ category, dryRun, force, skipDeps, skipEffectSolutions }) =>
     Effect.gen(function*() {
       const validCategories = ["all", "config", "ai", "cursor", "linting"] as const
 
@@ -47,11 +54,15 @@ const installCommand = Command.make("install", {
         ? FILE_MAPPINGS
         : Array.filter(FILE_MAPPINGS, (mapping) => mapping.category === category)
 
+      const filteredFiles = skipEffectSolutions
+        ? filesToInstall.filter((mapping) => mapping.localPath !== EFFECT_SOLUTIONS_FILE)
+        : filesToInstall
+
       if (dryRun) {
         yield* Console.log("📋 Files that would be installed:")
-        yield* Effect.forEach(filesToInstall, (mapping) =>
+        yield* Effect.forEach(filteredFiles, (mapping) =>
           Console.log(`  • ${mapping.localPath} - ${mapping.description}`))
-        yield* Console.log(`\nTotal: ${filesToInstall.length} files`)
+        yield* Console.log(`\nTotal: ${filteredFiles.length} files`)
 
         if (!skipDeps) {
           yield* Console.log("\n📦 Dependencies would also be checked and installed if missing")
@@ -59,7 +70,7 @@ const installCommand = Command.make("install", {
         return
       }
 
-      yield* installFiles(filesToInstall, force)
+      yield* installFiles(filteredFiles, force)
 
       if (!skipDeps) {
         yield* Console.log("\n" + "=".repeat(50))
@@ -90,6 +101,6 @@ const mainCommand = Command.make("dtechify").pipe(
 )
 
 export const run = Command.run(mainCommand, {
-  name: "dTechify",
+  name: "dtechify",
   version: "1.0.0"
 })

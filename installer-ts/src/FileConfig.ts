@@ -76,6 +76,13 @@ export const FILE_MAPPINGS: ReadonlyArray<FileMapping> = [
     category: "ai"
   },
   {
+    localPath: "effect-solutions.md",
+    githubPath: `${GITHUB_BASE_URL}/effect-solutions.md`,
+    description: "Effect Solutions CLI setup guide for language service and tsconfig",
+    required: false,
+    category: "ai"
+  },
+  {
     localPath: "GEMINI.md",
     githubPath: `${GITHUB_BASE_URL}/GEMINI.md`,
     description: "GEMINI AI assistant instructions",
@@ -199,7 +206,10 @@ export const FILE_MAPPINGS: ReadonlyArray<FileMapping> = [
 ]
 
 export const REQUIRED_DEPENDENCIES = [
+  "effect",
   "@effect/eslint-plugin",
+  "@effect/dprint",
+  "@effect/language-service",
   "@eslint/compat",
   "@eslint/eslintrc",
   "@typescript-eslint/parser",

@@ -1,5 +1,5 @@
 {
-  "name": "dtechify",
+  "name": "@dtechvision/make-repo-great",
   "version": "1.0.0",
   "type": "module",
   "packageManager": "bun@1.1.34",
@@ -12,7 +12,8 @@
   "homepage": "https://github.com/dtechvision/great-repo-files",
   "keywords": ["typescript", "eslint", "effect", "cli", "configuration", "ai-helpers", "cursor", "claude"],
   "bin": {
-    "dtechify": "./bin.cjs"
+    "dtechify": "./bin.cjs",
+    "make-repo-great": "./bin.cjs"
   },
   "publishConfig": {
     "access": "public",
@@ -25,6 +26,7 @@
     "check": "tsc -b tsconfig.json",
     "lint": "eslint \"**/{src,test,examples,scripts,dtslint}/**/*.{ts,mjs}\"",
     "lint-fix": "bun run lint --fix",
+    "release": "bun run build && bun publish --access public --tag latest",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "copy-package-json": "bun scripts/copy-package-json.ts",
@@ -56,7 +58,7 @@
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
     "tsup": "^8.2.4",
     "typescript": "^5.6.2",
-    "vitest": "^3.2.0"
+    "vitest": "^1.6.0"
   },
   "bun": {
     "patchedDependencies": {
