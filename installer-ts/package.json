@@ -1,6 +1,6 @@
 {
   "name": "@dtechvision/make-repo-great",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "packageManager": "bun@1.1.34",
   "license": "MIT",
@@ -10,7 +10,16 @@
     "url": "https://github.com/dtechvision/great-repo-files"
   },
   "homepage": "https://github.com/dtechvision/great-repo-files",
-  "keywords": ["typescript", "eslint", "effect", "cli", "configuration", "ai-helpers", "cursor", "claude"],
+  "keywords": [
+    "typescript",
+    "eslint",
+    "effect",
+    "cli",
+    "configuration",
+    "ai-helpers",
+    "cursor",
+    "claude"
+  ],
   "bin": {
     "dtechify": "./bin.cjs",
     "make-repo-great": "./bin.cjs"
