@@ -50,6 +50,7 @@ flowchart TD
 - `.github/changeset.yml`: `commitStatus: true`, `autoAdd: false` forces explicit changesets.  
 - Custom Changesets patches live in `/patches` and are referenced via `bun.patches` in `package.json`.  
 - Release job permissions: `contents`, `id-token`, and `pull-requests` for opening release PRs and publishing.  
+- GitHub releases: `createGithubReleases: true` in the Changesets action to auto-create tags and GitHub releases.  
 
 ## Operational Notes
 - Dry run locally: `bun run build && TEST_DIST= bun run test && bunx changeset publish --no-git-tag --snapshot`.  
@@ -210,6 +211,7 @@ jobs:
         with:
           version: bun run changeset-version
           publish: bun run changeset-publish
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
