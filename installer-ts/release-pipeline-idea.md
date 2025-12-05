@@ -215,6 +215,8 @@ jobs:
         with:
           version: bun run changeset-version
           publish: bun run changeset-publish
+          title: "Release: @dtechvision/make-repo-great"
+          commit: "chore: release"
           createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
