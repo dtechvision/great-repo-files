@@ -39,6 +39,7 @@ flowchart TD
    - `version`: `bun run changeset-version` applies changesets, bumps versions, runs `scripts/version.mjs` (a hook).  
    - If releases are pending, a Release PR is opened/updated with version bumps + changelog (`@changesets/changelog-github` pointing at your repo).  
    - When the Release PR merges (or if no PR is needed), `publish` runs: `bun run changeset-publish` → `bun run build` → `TEST_DIST= bun run test` → `changeset publish` (requires `NPM_TOKEN`).  
+   - GitHub releases/tags: `createGithubReleases: true` in `changesets/action` publishes tagged GitHub Releases automatically during publish.  
 
 5) Outputs  
    - Updated changelogs and versioned packages in the Release PR.  
@@ -52,6 +53,7 @@ flowchart TD
 - Release job permissions: `contents`, `id-token`, and `pull-requests` for opening release PRs and publishing.  
 - GitHub releases: `createGithubReleases: true` in the Changesets action to auto-create tags and GitHub releases.  
 - Monorepo root scripts: add `changeset-version` and `changeset-publish` scripts at the repo root that proxy into `installer-ts` so the release workflow can run from the root.
+- Permissions: enable “Allow GitHub Actions to create and approve pull requests” (or provide a PAT token to `changesets/action`) so the release PR can be opened automatically.
 
 ## Operational Notes
 - Dry run locally: `bun run build && TEST_DIST= bun run test && bunx changeset publish --no-git-tag --snapshot`.  
