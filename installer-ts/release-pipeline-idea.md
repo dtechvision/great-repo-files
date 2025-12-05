@@ -200,6 +200,10 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+defaults:
+  run:
+    working-directory: installer-ts
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -213,6 +217,7 @@ jobs:
       - name: Create Release Pull Request or Publish
         uses: changesets/action@v1
         with:
+          cwd: installer-ts
           version: bun run changeset-version
           publish: bun run changeset-publish
           title: "Release: @dtechvision/make-repo-great"
