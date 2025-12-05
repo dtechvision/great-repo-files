@@ -54,6 +54,7 @@ flowchart TD
 - GitHub releases: `createGithubReleases: true` in the Changesets action to auto-create tags and GitHub releases.  
 - Monorepo root scripts: add `changeset-version` and `changeset-publish` scripts at the repo root that proxy into `installer-ts` so the release workflow can run from the root.
 - Permissions: enable “Allow GitHub Actions to create and approve pull requests” (or provide a PAT token to `changesets/action`) so the release PR can be opened automatically.
+- Changeset location: keep `.changeset/` inside `installer-ts/` so the release workflow (which runs in that working directory) stages/deletes the consumed changeset files.
 
 ## Operational Notes
 - Dry run locally: `bun run build && TEST_DIST= bun run test && bunx changeset publish --no-git-tag --snapshot`.  
