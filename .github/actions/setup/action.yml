@@ -10,4 +10,5 @@ runs:
         bun-version: latest
     - name: Install dependencies
       shell: bash
+      working-directory: installer-ts
       run: bun install

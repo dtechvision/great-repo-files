@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [master]
 
+defaults:
+  run:
+    working-directory: installer-ts
+
 jobs:
   changeset-check:
     runs-on: ubuntu-latest

@@ -7,6 +7,10 @@ on:
 
 permissions: {}
 
+defaults:
+  run:
+    working-directory: installer-ts
+
 jobs:
   snapshot:
     name: Snapshot
