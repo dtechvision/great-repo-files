@@ -1,0 +1,7 @@
+{
+  "name": "great-repo-files",
+  "private": true,
+  "workspaces": [
+    "installer-ts"
+  ]
+}
