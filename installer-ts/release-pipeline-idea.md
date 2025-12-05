@@ -51,6 +51,7 @@ flowchart TD
 - Custom Changesets patches live in `/patches` and are referenced via `bun.patches` in `package.json`.  
 - Release job permissions: `contents`, `id-token`, and `pull-requests` for opening release PRs and publishing.  
 - GitHub releases: `createGithubReleases: true` in the Changesets action to auto-create tags and GitHub releases.  
+- Monorepo root scripts: add `changeset-version` and `changeset-publish` scripts at the repo root that proxy into `installer-ts` so the release workflow can run from the root.
 
 ## Operational Notes
 - Dry run locally: `bun run build && TEST_DIST= bun run test && bunx changeset publish --no-git-tag --snapshot`.  

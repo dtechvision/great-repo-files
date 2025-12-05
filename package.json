@@ -3,5 +3,9 @@
   "private": true,
   "workspaces": [
     "installer-ts"
-  ]
+  ],
+  "scripts": {
+    "changeset-version": "cd installer-ts && bun run changeset-version",
+    "changeset-publish": "cd installer-ts && bun run changeset-publish"
+  }
 }
