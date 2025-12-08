@@ -1,6 +1,6 @@
 {
   "name": "@dtechvision/make-repo-great",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "packageManager": "bun@1.1.34",
   "license": "MIT",
