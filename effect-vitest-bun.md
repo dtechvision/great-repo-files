@@ -6,7 +6,7 @@ In this guide, we'll walk you through setting up the necessary dependencies and 
 
 # Requirements
 
-First, ensure you have [`vitest`](https://vitest.dev/guide/) installed (version `1.6.0` or later).
+First, ensure you have [`vitest`](https://vitest.dev/guide/) installed (version `4.0.0` or later for increased bun support).
 
 ```sh
 bun add -D vitest
