@@ -15,7 +15,7 @@ jobs:
   snapshot:
     name: Snapshot
     if: github.repository_owner == 'dtechvision'
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.ACTIONS_RUNNER || 'ubuntu-latest' }}
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
