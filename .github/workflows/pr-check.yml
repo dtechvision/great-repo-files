@@ -10,7 +10,7 @@ defaults:
 
 jobs:
   changeset-check:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.ACTIONS_RUNNER || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4
         with:
